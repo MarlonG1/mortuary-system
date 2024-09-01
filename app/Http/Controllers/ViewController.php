@@ -32,11 +32,6 @@ class ViewController extends Controller
         return view('administration.products');
     }
 
-    public function test()
-    {
-        return view('test');
-    }
-
     public function categories()
     {
         return view('administration.categories');
@@ -60,5 +55,13 @@ class ViewController extends Controller
     public function calendar()
     {
         return view('administration.calendar');
+    }
+
+    public function logout()
+    {
+        session()->invalidate();
+        session()->regenerateToken();
+
+        return redirect('/login');
     }
 }

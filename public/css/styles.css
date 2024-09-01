@@ -928,3 +928,7 @@ body.swal2-shown > [aria-hidden='true'] {
     color: rgba(81, 86, 93, 0.7);
 }
 
+
+.custom-pos{
+    left: -80px !important;
+}

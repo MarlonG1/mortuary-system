@@ -35,7 +35,7 @@
                                     <td>{{$customer->email}}</td>
                                     <td>{{$customer->phone}}</td>
                                     <td>{{$customer->dui}}</td>
-                                    <td>Mucho sexo</td>
+                                    <td>{{$customer->location}}</td>
                                     <td class="d-flex gap-2">
                                         <a href="#" class="btn btn-glass-blue"
                                            wire:click="openCreateModal({{$customer}})"

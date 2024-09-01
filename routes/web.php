@@ -22,6 +22,7 @@ Route::group(['prefix' => 'administration', 'auth' => 'middleware'], function ()
 });
 
 Route::get('/login', [ViewController::class, 'login'])->name('login');
+Route::get('/logout', [ViewController::class, 'logout'])->name('logout');
 
 Route::get('/test', function () {
     return view('test');

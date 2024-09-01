@@ -5,6 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="{{asset('img/logo.ico')}}">
     {{--        Header scripts--}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -51,7 +52,8 @@
                                 <a href="{{route('calendar')}}"><i class="fa-solid fa-calendar p-1"></i> Calendar</a>
                             </li>
                             <li class="{{ Request::routeIs('sales') ? 'active-sidebar' : '' }}">
-                                <a href="{{route('sales')}}"><i class="fa-solid fa-file-invoice-dollar p-1"></i> Sales</a>
+                                <a href="{{route('sales')}}"><i class="fa-solid fa-file-invoice-dollar p-1"></i>
+                                    Sales</a>
                             </li>
                             <li class="{{ Request::routeIs('services') ? 'active-sidebar' : '' }}">
                                 <a href="{{route('services')}}"><i class="fa-solid fa-suitcase p-1"></i> Services</a>
@@ -75,7 +77,7 @@
                 </div>
             </div>
             <div class="col-sm-10 px-0">
-                <nav class="navbar navbar-expand-lg navbar-dark glass-dark-card py-4">
+                <nav class="navbar navbar-expand-lg navbar-dark glass-dark-card py-4 mb-3">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -83,9 +85,15 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav ms-auto pe-5">
                             <li class="nav-item pe-5 d-flex gap-3 align-items-center">
-                                <p class="text-light m-0">{{ auth()->user()->username }}</p>
-                                <a href="#services" class="text-decoration-none text-light fw-bold"><i
-                                        class="fa-solid fa-user"></i></a>
+                                    <p class="text-light m-0">{{ auth()->user()->username }}</p>
+                                <div class="dropdown">
+                                    <a href="#" class="text-decoration-none text-light fw-bold dropdown-toggle" type="button" id="session" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="fa-solid fa-user"></i>
+                                    </a>
+                                    <ul class="dropdown-menu custom-pos" aria-labelledby="session">
+                                        <li><a class="dropdown-item" href="{{route('logout')}}">Logout</a></li>
+                                    </ul>
+                                </div>
                             </li>
                         </ul>
                     </div>

@@ -15,7 +15,6 @@
     <button type="submit" id="login-btn" class="btn btn-secondary color-primary fw-semibold w-100
                              py-2 mb-3 custom-radius">Login
     </button>
-    <button id="btn" class="btn btn-primary">Test</button>
 </form>
 
 
